@@ -24,19 +24,19 @@ func TestBenchGoid(t *testing.T) {
 	t.Logf("Times: %10v, Use: %14v %10v/op\n", N, use, op)
 }
 
-//func TestPcid(t *testing.T) {
-//	t.Logf("GoId: %v", runtime.ProcId())
-//	t.Logf("GoId: %v", runtime.ProcId())
-//}
+func TestGoPc(t *testing.T) {
+	t.Logf("GoPc: %v", runtime.GoPc())
+	t.Logf("GoPc: %v", runtime.GoPc())
+}
 
-//func TestBenchPcid(t *testing.T) {
-//	N := 10000 * 1000
-//	start := time.Now()
-//	for i := 0; i < N; i++ {
-//		_ = runtime.ProcId()
-//	}
-//	end := time.Now()
-//	use := end.Sub(start)
-//	op := use / time.Duration(N)
-//	t.Logf("Times: %10v, Use: %14v %10v/op\n", N, use, op)
-//}
+func TestBenchGoPc(t *testing.T) {
+	N := 10000 * 1000
+	start := time.Now()
+	for i := 0; i < N; i++ {
+		_ = runtime.GoPc()
+	}
+	end := time.Now()
+	use := end.Sub(start)
+	op := use / time.Duration(N)
+	t.Logf("Times: %10v, Use: %14v %10v/op\n", N, use, op)
+}

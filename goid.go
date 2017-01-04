@@ -8,3 +8,7 @@ import (
 func GoId() int64 {
 	return runtime.GoId()
 }
+
+func GoPc() int {
+	return runtime.GoPc()
+}
