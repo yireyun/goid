@@ -3,6 +3,7 @@ package goid
 
 import (
 	"runtime"
+	"sync"
 	"testing"
 	"time"
 )
@@ -27,6 +28,8 @@ func TestBenchGoid(t *testing.T) {
 func TestGoPc(t *testing.T) {
 	t.Logf("GoPc: %v", runtime.GoPc())
 	t.Logf("GoPc: %v", runtime.GoPc())
+	t.Logf("ProcPin: %v", sync.ProcPin())
+	sync.ProcUnpin()
 }
 
 func TestBenchGoPc(t *testing.T) {
